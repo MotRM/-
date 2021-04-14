@@ -1,4 +1,6 @@
-cities = dict()
+from collections import defaultdict
+
+cities = defaultdict(list)
 city_key = ''
 
 def dict_cities():
@@ -10,7 +12,7 @@ def dict_cities():
 
     with open('CITIES.md', 'r', encoding='Windows-1251') as file:
         for line in file:
-            cities[line[0].lower()] = line[:-1]
+            cities[line[0].lower()].append(line[:-1])
     return cities
 
 def game_city(client_message_city):
@@ -27,4 +29,4 @@ def game_city(client_message_city):
 
     if cities.get(city_key) == None:
         return f'Вы выйграли я незнаю больше городов'
-    return cities.pop(city_key)
+    return cities.get(city_key)[0]

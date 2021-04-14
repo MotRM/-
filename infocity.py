@@ -1,12 +1,13 @@
 # тут пока тестирую код из модуля gamecity
+from collections import defaultdict
 
-cities = dict()
+cities = defaultdict(list)
 city_key = ''
 city = 'Москва'
 
 with open('CITIES.md', 'r', encoding='Windows-1251') as file:
     for line in file:
-        cities[line[0].lower()] = line[:-1]
+        cities[line[0].lower()].append(line[:-1])
 print(cities)
 
 
@@ -23,7 +24,7 @@ def game_city(client_message_city):
 
     if cities.get(city_key) == None:
         return f'Вы выйграли я незнаю больше городов'
-    return cities.pop(city_key)
+    return cities.get(city_key)[0]
 
 
 print(game_city(city))
