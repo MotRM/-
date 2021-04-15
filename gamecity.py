@@ -28,5 +28,9 @@ def game_city(client_message_city):
                 client_message_city[-2])
 
     if cities.get(city_key) == None:
-        return f'Вы выйграли я незнаю больше городов'
-    return cities.get(city_key)[0]
+        return f'Вы выйграли, я незнаю больше городов'
+
+    city_result = cities.get(city_key)[0]
+    cities[city_key].remove(city_result)
+
+    return city_result

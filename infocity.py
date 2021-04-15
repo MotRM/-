@@ -19,12 +19,16 @@ def game_city(client_message_city):
     сообщение о победе
     """
     city_key = (client_message_city[-1] if not
-    client_message_city[-1] in ['ь', 'ы'] else
+                client_message_city[-1] in ['ь', 'ы'] else
                 client_message_city[-2])
 
     if cities.get(city_key) == None:
         return f'Вы выйграли я незнаю больше городов'
-    return cities.get(city_key)[0]
+
+    city_result = cities.get(city_key)[0]
+    cities[city_key].remove(city_result)
+
+    return city_result
 
 
 print(game_city(city))
