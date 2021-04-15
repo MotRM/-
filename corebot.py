@@ -10,8 +10,10 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-
+    embed = discord.Embed(
+        title="Привет всем!",
+    )
     if message.content.startswith('$Привет!'):
-        await message.channel.send('Привет!')
+        await message.channel.send(embed=embed)
 
 client.run('ODMxNzA4Nzc0NTA2NTYxNTM3.YHZLKA.w05Asbj1-05l6bQYKSw1Y-a8CKs')
