@@ -1,17 +1,26 @@
 import discord
+from discord.ext import commands
+import gamecity
 
-client = discord.Client()
+bot = commands.Bot(command_prefix=('+'))
+bot.remove_command( 'help' )
 
-@client.event
+@bot.event
 async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+    print("Я запущен!")
 
-@client.event
+@bot.command()
+async def Привет(ctx):
+    await ctx.send('Привет! Я бот для игры в города. Если хочешь сыграть набери +Игра')
+
+@bot.command()
+async def Игра(ctx):
+    await ctx.send(gamecity.first_start_game())
+
+
+@bot.command()
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == bot.user:
         return
 
-    if message.content.startswith('$Привет!'):
-        await message.channel.send('Привет!')
-
-client.run('ODMxNzA4Nzc0NTA2NTYxNTM3.YHZLKA.w05Asbj1-05l6bQYKSw1Y-a8CKs')
+bot.run('')
