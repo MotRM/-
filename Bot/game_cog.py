@@ -29,7 +29,8 @@ class Game(commands.Cog):
                     return
                 else:
                     await message.channel.send(gamecity.game_city(message.content))
-        await self.bot.process_commands(message)
+
+
 
 def setup(bot):
     bot.add_cog(Game(bot))
