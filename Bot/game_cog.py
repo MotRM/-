@@ -3,6 +3,14 @@ from Core import gamecity
 from discord.ext import commands
 
 class Game(commands.Cog):
+
+    '''
+    Данный Cog содержит в себе event on_message. Event
+    запускает игровую сейссию, когда в чате появляется
+    сообщение +Игра. Одна игровая сейссия длится до победы
+    игрока или пока игрок не наберет сообщение +Закончить
+    '''
+
     def __init__(self, bot):
         self.bot = bot
 
