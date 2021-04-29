@@ -15,7 +15,7 @@ class Info(commands.Cog):
         await ctx.send('Команды:\n'
                        '+Привет - привествие\n'
                        '+Чистка - удалить 100 сообщений\n'
-                       '+Игра - запустить игру')
+                       'Игра - запустить игру')
 
 def setup(bot):
     bot.add_cog(Info(bot))

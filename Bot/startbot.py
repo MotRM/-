@@ -1,4 +1,5 @@
 import discord
+from Core import gamecity, chat_user
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix=('+'))

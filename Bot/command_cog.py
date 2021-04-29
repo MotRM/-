@@ -20,7 +20,7 @@ class Bot(commands.Cog):
 
     @commands.command()
     async def Привет(self, ctx):
-        await ctx.send('Привет! Я бот для игры в города. Если хочешь сыграть набери +Игра')
+        await ctx.send('Привет! Я бот для игры в города. Если хочешь сыграть набери Игра')
 
     @commands.command(pass_context=True)
     async def Чистка(self, ctx, amount=100):
