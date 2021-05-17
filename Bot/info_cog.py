@@ -16,6 +16,3 @@ class Info(commands.Cog):
                        '+Привет - привествие\n'
                        '+Чистка - удалить 100 сообщений\n'
                        'Игра - запустить игру')
-
-def setup(bot):
-    bot.add_cog(Info(bot))

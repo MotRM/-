@@ -26,5 +26,3 @@ class Bot(commands.Cog):
     async def Чистка(self, ctx, amount=100):
         await ctx.channel.purge(limit=amount)
 
-def setup(bot):
-    bot.add_cog(Bot(bot))
