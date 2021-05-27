@@ -7,9 +7,11 @@ first_city_key = ''
 
 def first_start_game(dict_cities):
 
-    """ Данная функция запускается при
+    """
+    Данная функция запускается при
     вводе команды и определяет кто называет
-     город первым. """
+    город первым.
+    """
 
     if random.randint(0, 5) > 2:
         return f'Вы называете город первым!\n' \
@@ -22,12 +24,14 @@ def first_start_game(dict_cities):
         return f'Я хожу первым!\nГород: {first_city}\nЧтобы закончить наберите Закончить'
 
 def game_city(client_message_city, dict_cities):
+
     """
     Функция ищет в словаре cities города по ключу
     :param client_message_city: работа с str
     :return: строковое значение города или
     сообщение о победе
     """
+
     city_key_bot = (client_message_city[-1] if not
                 client_message_city[-1] in ['ь', 'ы'] else
                 client_message_city[-2])
@@ -47,6 +51,13 @@ def game_city(client_message_city, dict_cities):
     return city_result
 
 def clear_dict_cities(dict_cities):
+
+    """
+    Функция используется после
+    окончания игры и очищает словарь,
+    далее создает новый
+    """
+
     dict_cities.clear()
     with open('C:/Users/motr8/Desktop/Projects/Core/CITIES.md', 'r', encoding='Windows-1251') as file:
         for line in file:

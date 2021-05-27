@@ -2,11 +2,13 @@ import discord
 from discord.ext import commands
 
 class Info(commands.Cog):
-    '''
+
+    """
     Данный Cog содержит в себе следующие команды для получения информации:
     Помощь - отражает набор всех команд в боте
     Правила - отражает сообщение с правилами игры (не реализован)
-    '''
+    """
+
     def __init__(self, bot):
         self.bot = bot
 

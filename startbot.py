@@ -5,7 +5,7 @@ from Bot import command_cog, info_cog, game_cog
 
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix=('+'))
+bot = commands.Bot(command_prefix=('+'), help_command=None, case_insensitive=True)
 bot.remove_command( 'help' )
 
 bot.add_cog(command_cog.Bot(bot))
